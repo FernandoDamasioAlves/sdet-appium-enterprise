@@ -89,6 +89,10 @@ public final class MobileDriverFactory {
         }
     }
 
+    public static boolean hasDriver() {
+        return DRIVER.get() != null;
+    }
+
     public static AndroidDriver getDriver() {
         AndroidDriver driver = DRIVER.get();
 
