@@ -28,4 +28,9 @@ public final class ViewsPage extends BaseMobilePage {
     public boolean isDragAndDropVisible() {
         return isVisible(DRAG_AND_DROP);
     }
+
+    public DragAndDropPage openDragAndDrop() {
+        tap(DRAG_AND_DROP);
+        return new DragAndDropPage(driver);
+    }
 }
