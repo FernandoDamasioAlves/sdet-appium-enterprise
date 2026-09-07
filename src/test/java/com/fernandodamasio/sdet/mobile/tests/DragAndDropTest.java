@@ -3,11 +3,13 @@ package com.fernandodamasio.sdet.mobile.tests;
 import com.fernandodamasio.sdet.mobile.pages.ApiDemosHomePage;
 import com.fernandodamasio.sdet.mobile.pages.DragAndDropPage;
 import com.fernandodamasio.sdet.mobile.pages.ViewsPage;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@Tag("regression")
 class DragAndDropTest extends BaseMobileTest {
 
     @Test

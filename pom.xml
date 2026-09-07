@@ -106,10 +106,32 @@
 
                 <configuration>
                     <useModulePath>false</useModulePath>
+                    <groups>${test.groups}</groups>
                 </configuration>
             </plugin>
 
         </plugins>
     </build>
+
+
+    <profiles>
+
+        <profile>
+            <id>smoke</id>
+
+            <properties>
+                <test.groups>smoke</test.groups>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>regression</id>
+
+            <properties>
+                <test.groups>smoke | regression</test.groups>
+            </properties>
+        </profile>
+
+    </profiles>
 
 </project>
