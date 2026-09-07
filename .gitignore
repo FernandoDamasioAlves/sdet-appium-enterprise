@@ -1,0 +1,33 @@
+# Maven
+target/
+
+# IntelliJ
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Test evidence
+reports/
+screenshots/
+videos/
+
+# Appium
+appium-logs/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Mobile applications
+*.apk
+*.aab
+*.ipa
