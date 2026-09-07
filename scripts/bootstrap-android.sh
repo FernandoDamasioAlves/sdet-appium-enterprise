@@ -17,12 +17,21 @@ echo "=========================================="
 echo " ANDROID TEST APP BOOTSTRAP"
 echo "=========================================="
 
-for command in curl shasum adb; do
+for command in curl adb; do
     if ! command -v "$command" >/dev/null 2>&1; then
         echo "ERRO: comando '$command' nao encontrado."
         exit 1
     fi
 done
+
+if command -v sha256sum >/dev/null 2>&1; then
+    SHA256_COMMAND="sha256sum"
+elif command -v shasum >/dev/null 2>&1; then
+    SHA256_COMMAND="shasum -a 256"
+else
+    echo "ERRO: nenhum utilitario SHA-256 encontrado."
+    exit 1
+fi
 
 echo
 echo "=== DEVICE ==="
@@ -42,7 +51,7 @@ verify_checksum() {
     local actual
 
     actual="$(
-        shasum -a 256 "$APP_PATH" |
+        $SHA256_COMMAND "$APP_PATH" |
             awk '{print $1}'
     )"
 
@@ -79,7 +88,7 @@ fi
 echo
 echo "=== SHA-256 ==="
 
-shasum -a 256 "$APP_PATH"
+$SHA256_COMMAND "$APP_PATH"
 
 echo
 echo "=== INSTALL ==="
