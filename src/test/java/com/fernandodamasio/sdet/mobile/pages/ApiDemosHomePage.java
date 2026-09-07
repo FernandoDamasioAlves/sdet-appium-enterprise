@@ -12,6 +12,9 @@ public final class ApiDemosHomePage extends BaseMobilePage {
     private static final By VIEWS =
             AppiumBy.accessibilityId("Views");
 
+    private static final By APP =
+            AppiumBy.accessibilityId("App");
+
     private static final By ACCESSIBILITY =
             AppiumBy.accessibilityId("Accessibility");
 
@@ -23,6 +26,11 @@ public final class ApiDemosHomePage extends BaseMobilePage {
         return APP_PACKAGE.equals(currentPackage())
                 && isVisible(ACCESSIBILITY)
                 && isVisible(VIEWS);
+    }
+
+    public AppMenuPage openApp() {
+        tap(APP);
+        return new AppMenuPage(driver);
     }
 
     public ViewsPage openViews() {
