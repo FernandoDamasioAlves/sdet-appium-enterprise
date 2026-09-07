@@ -12,6 +12,9 @@ public final class ViewsPage extends BaseMobilePage {
     private static final By BUTTONS =
             AppiumBy.accessibilityId("Buttons");
 
+    private static final By CONTROLS =
+            AppiumBy.accessibilityId("Controls");
+
     private static final By DRAG_AND_DROP =
             AppiumBy.accessibilityId("Drag and Drop");
 
@@ -22,11 +25,17 @@ public final class ViewsPage extends BaseMobilePage {
     public boolean isLoaded() {
         return isVisible(ANIMATION)
                 && isVisible(BUTTONS)
+                && isVisible(CONTROLS)
                 && isVisible(DRAG_AND_DROP);
     }
 
     public boolean isDragAndDropVisible() {
         return isVisible(DRAG_AND_DROP);
+    }
+
+    public ControlsMenuPage openControls() {
+        tap(CONTROLS);
+        return new ControlsMenuPage(driver);
     }
 
     public DragAndDropPage openDragAndDrop() {
