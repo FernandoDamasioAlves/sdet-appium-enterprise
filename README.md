@@ -2,6 +2,8 @@
 
 [![Android Mobile CI](https://github.com/FernandoDamasioAlves/sdet-appium-enterprise/actions/workflows/android-ci.yml/badge.svg)](https://github.com/FernandoDamasioAlves/sdet-appium-enterprise/actions/workflows/android-ci.yml)
 
+> 🇺🇸 English | [🇧🇷 Português](README.pt-BR.md)
+
 Enterprise-style Android test automation framework built with **Java 21, Appium 3, UiAutomator2, Selenium and JUnit 5**.
 
 The project demonstrates mobile quality engineering practices beyond basic UI automation: reusable Page Objects, native Android interactions, W3C gestures, automatic failure evidence, reproducible application bootstrap, Maven quality gates and Android emulator execution in GitHub Actions.
